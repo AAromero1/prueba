@@ -1,0 +1,36 @@
+<!-- app/views/admin/events/edit.html.erb -->
+<h1>Editar Evento</h1>
+
+<%= form_with(model: [:admin, @event], local: true) do |form| %>
+
+  <div class="field">
+    <%= form.label :Deporte %>
+    <%= form.select :sport, ['Fútbol', 'Padel', 'Basquetbol', 'Tenis', 'Tenis dobles'], include_blank: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Fecha %>
+    <%= form.date_field :date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Horario %>
+    <%= form.time_field :time %>
+  </div>
+
+  <div class="field">
+      <%= form.label :Lugar %>
+      <%= form.text_field :location %>
+    </div>
+  
+  <div class="field">
+      <%= form.label :cupos %>
+      <%= form.number_field :spots %>
+  </div>
+  
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Volver', root_path %>

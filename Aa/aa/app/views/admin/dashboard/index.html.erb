@@ -1,0 +1,51 @@
+<h1>Panel de Administración</h1>
+
+<h2>Eventos</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Deporte</th>
+      <th>Fecha</th>
+      <th>Hora</th>
+      <th>Lugar</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= event.sport %></td>
+        <td><%= event.date.strftime("%d/%m/%Y") %></td>
+        <td><%= event.time.strftime("%H:%M") %></td>
+        <td><%= event.location %></td>
+        <td>
+          <%= link_to 'Editar', edit_admin_event_path(event) %> |
+          <%= link_to 'Eliminar', admin_event_path(event), method: :delete, data: { confirm: '¿Estás seguro?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h2>Usuarios</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+        <td>
+          <%= link_to 'Eliminar', admin_user_path(user), method: :delete, data: { confirm: '¿Estás seguro?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Volver', root_path %>
+

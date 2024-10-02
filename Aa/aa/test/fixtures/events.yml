@@ -1,0 +1,31 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the "{}" from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+# test/fixtures/events.yml
+# test/fixtures/events.yml
+# test/fixtures/events.yml
+
+# test/fixtures/events.yml
+
+one:
+  sport: "Football"
+  date: <%= Date.today + 1 %>
+  time: "2000-01-01 15:00:00"
+  location: "Stadium"
+  spots: 10
+  user: one
+
+
+two:
+  sport: "Basketball"
+  date: <%= Date.today - 1 %>
+  time: "2000-01-01 18:00:00"
+  location: "Gym"
+  spots: 15
+  user: two
+
+
+

@@ -1,0 +1,25 @@
+<%= form_with(
+    model: message,
+    id: "message_form",
+    method: :post,
+    data: {
+        controller: "reset-form",
+        action: "turbo:submit-end->reset-form#clearInput"
+    },
+    class: "p-3 border-t border-borderColor1 flex items-center") do |form| %>
+
+  <%= form.text_field :body,
+  id: "chat-input",
+  class: "flex-grow p-3 rounded-md border border-borderColor1",
+  data: {
+    reset_form_target: "input"
+  },
+  placeholder: "Escriba un mensaje..." %>
+  
+  <%= form.button class: "ml-2 rounded-full bg-blue-500 text-white w-10 h-10 flex justify-center items-center" do %>
+    <!-- Up arrow icon -->
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12l5-5m0 0l5 5m-5-5v12"></path>
+    </svg>
+  <% end %>
+<% end %>
